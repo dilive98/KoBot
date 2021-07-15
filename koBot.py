@@ -9,7 +9,6 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
-# Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
 def muppets(update, context):
     """Send a message when the command /muppet is issued."""
@@ -30,11 +29,8 @@ def error(update, context):
 
 def main():
     """Start the bot."""
-    # Create the Updater and pass it your bot's token.
-    # Make sure to set use_context=True to use the new context based callbacks
-    # Post version 12 this will no longer be necessary
-    updater = Updater(""
-, use_context=True)
+    # Create the Updater and pass it bot's token.
+    updater = Updater("", use_context=True)   
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
